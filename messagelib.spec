@@ -31,6 +31,7 @@ BuildRequires: cmake(KF5SendLater)
 BuildRequires: cmake(KF5Mbox)
 BuildRequires: cmake(KF5Gravatar)
 BuildRequires: cmake(KF5CalendarCore)
+BuildRequires: cmake(KF5MailTransport)
 BuildRequires: boost-devel
 
 %description
