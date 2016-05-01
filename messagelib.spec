@@ -26,6 +26,7 @@ BuildRequires: cmake(KF5Mime)
 BuildRequires: cmake(KF5JobWidgets)
 BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5KDELibs4Support)
+BuildRequires: boost-devel
 
 %description
 KDE library for message handling
