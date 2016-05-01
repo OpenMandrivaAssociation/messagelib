@@ -27,6 +27,9 @@ BuildRequires: cmake(KF5JobWidgets)
 BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5KDELibs4Support)
 BuildRequires: cmake(Qt5UiTools)
+BuildRequires: cmake(KF5SendLater)
+BuildRequires: cmake(KF5Mbox)
+BuildRequires: cmake(KF5Gravatar)
 BuildRequires: boost-devel
 
 %description
