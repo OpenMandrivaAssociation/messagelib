@@ -30,6 +30,7 @@ BuildRequires: cmake(Qt5UiTools)
 BuildRequires: cmake(KF5SendLater)
 BuildRequires: cmake(KF5Mbox)
 BuildRequires: cmake(KF5Gravatar)
+BuildRequires: cmake(KF5CalendarCore)
 BuildRequires: boost-devel
 
 %description
