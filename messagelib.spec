@@ -24,6 +24,17 @@ BuildRequires: cmake(Qt5Qml)
 BuildRequires: sasl-devel
 BuildRequires: cmake(KF5AkonadiSearch)
 BuildRequires: cmake(KF5Mime)
+BuildRequires: cmake(KF5JobWidgets)
+BuildRequires: cmake(KF5Solid)
+BuildRequires: cmake(KF5KDELibs4Support)
+BuildRequires: cmake(Qt5UiTools)
+BuildRequires: cmake(KF5SendLater)
+BuildRequires: cmake(KF5Mbox)
+BuildRequires: cmake(KF5Gravatar)
+BuildRequires: cmake(KF5CalendarCore)
+BuildRequires: cmake(KF5MailTransport)
+BuildRequires: cmake(KF5IdentityManagement)
+BuildRequires: boost-devel
 
 %description
 KDE library for message handling
