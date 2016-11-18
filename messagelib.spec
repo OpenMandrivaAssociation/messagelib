@@ -38,6 +38,7 @@ BuildRequires: cmake(KF5IdentityManagement)
 BuildRequires: cmake(Qt5WebEngine)
 BuildRequires: cmake(Qt5WebKitWidgets)
 BuildRequires: boost-devel
+BuildRequires: pkgconfig(poppler-qt5)
 
 %description
 KDE library for message handling.
