@@ -35,10 +35,11 @@ BuildRequires: cmake(KF5CalendarCore)
 BuildRequires: cmake(KF5MailTransport)
 BuildRequires: cmake(KF5IdentityManagement)
 BuildRequires: cmake(Qt5WebEngine)
+BuildRequires: cmake(Qt5WebKitWidgets)
 BuildRequires: boost-devel
 
 %description
-KDE library for message handling
+KDE library for message handling.
 
 %define major 5
 %dependinglibpackage KF5MessageComposer %{major}
