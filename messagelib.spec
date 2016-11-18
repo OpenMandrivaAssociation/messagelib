@@ -78,7 +78,7 @@ Development files (Headers etc.) for %{name}.
 %ninja_install -C build
 
 %files
-%{_libadir}/qt5/plugins/messageviewer/*.so
+%{_libdir}/qt5/plugins/messageviewer/*.so
 %{_datadir}/libmessageviewer
 %{_datadir}/messagelist
 %{_datadir}/messageviewer
