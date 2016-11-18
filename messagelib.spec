@@ -34,6 +34,7 @@ BuildRequires: cmake(KF5Gravatar)
 BuildRequires: cmake(KF5CalendarCore)
 BuildRequires: cmake(KF5MailTransport)
 BuildRequires: cmake(KF5IdentityManagement)
+BuildRequires: cmake(Qt5WebEngine)
 BuildRequires: boost-devel
 
 %description
@@ -61,10 +62,9 @@ Development files (Headers etc.) for %{name}.
 %prep
 %setup -q
 %apply_patches
+%cmake_kde5
 
 %build
-%cmake_kde5
-cd ../
 %ninja -C build
 
 %install
