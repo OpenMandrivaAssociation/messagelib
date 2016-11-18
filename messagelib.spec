@@ -49,6 +49,8 @@ KDE library for message handling.
 %dependinglibpackage KF5MessageList %{major}
 %dependinglibpackage KF5MessageViewer %{major}
 %dependinglibpackage KF5TemplateParser %{major}
+%dependinglibpackage KF5MimeTreeParser %{major}
+%dependinglibpackage KF5WebEngineViewer %{major}
 
 %package -n %{devname}
 Summary: Development files for %{name}
@@ -58,6 +60,8 @@ Requires: %{mklibname KF5MessageCore %{major}} = %{EVRD}
 Requires: %{mklibname KF5MessageList %{major}} = %{EVRD}
 Requires: %{mklibname KF5MessageViewer %{major}} = %{EVRD}
 Requires: %{mklibname KF5TemplateParser %{major}} = %{EVRD}
+Requires: %{mklibname KF5MimeTreeParser %{major}} = %{EVRD}
+Requires: %{mklibname KF5WebEngineViewer %{major}} = %{EVRD}
 
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
@@ -74,6 +78,7 @@ Development files (Headers etc.) for %{name}.
 %ninja_install -C build
 
 %files
+%{_libadir}/qt5/plugins/messageviewer/*.so
 %{_datadir}/libmessageviewer
 %{_datadir}/messagelist
 %{_datadir}/messageviewer
