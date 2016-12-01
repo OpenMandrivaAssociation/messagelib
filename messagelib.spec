@@ -39,7 +39,7 @@ BuildRequires: cmake(Qt5WebEngine)
 BuildRequires: cmake(Qt5WebKitWidgets)
 BuildRequires: boost-devel
 BuildRequires: pkgconfig(poppler-qt5)
-Conflicts: kdepim-addons < 16.04.3-2
+Conflicts: kdepim-addons < 1:16.04.3-2
 
 %description
 KDE library for message handling.
