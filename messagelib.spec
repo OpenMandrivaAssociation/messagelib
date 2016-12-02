@@ -11,7 +11,7 @@ Version:	16.08.3
 %else
 %define ftpdir stable
 %endif
-Release:	1
+Release:	2
 Source0: http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Summary: KDE library for message handling
 URL: http://kde.org/
@@ -39,7 +39,8 @@ BuildRequires: cmake(Qt5WebEngine)
 BuildRequires: cmake(Qt5WebKitWidgets)
 BuildRequires: boost-devel
 BuildRequires: pkgconfig(poppler-qt5)
-Conflicts: kdepim-addons < 1:16.04.3-2
+Conflicts: messageviewer < 2:16.08.3-1
+Conflicts: kdepim-addons < 1:16.08.3-1
 
 %description
 KDE library for message handling.
