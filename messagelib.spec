@@ -11,7 +11,7 @@ Version:	17.04.0
 %else
 %define ftpdir stable
 %endif
-Release:	2
+Release:	3
 Source0: http://download.kde.org/%{ftpdir}/applications/%{version}/src/%{name}-%{version}.tar.xz
 Summary: KDE library for message handling
 URL: http://kde.org/
@@ -41,6 +41,7 @@ BuildRequires: boost-devel
 BuildRequires: pkgconfig(poppler-qt5)
 Conflicts: messageviewer < 2:16.08.3-3
 Conflicts: kmail < 3:17.04.0
+Conflicts: kdepim-addons < 3:17.04.0
 
 %description
 KDE library for message handling.
