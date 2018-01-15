@@ -36,7 +36,7 @@ BuildRequires: cmake(KF5CalendarCore)
 BuildRequires: cmake(KF5MailTransport)
 BuildRequires: cmake(KF5IdentityManagement)
 BuildRequires: cmake(Qt5WebEngine)
-BuildRequires: cmake(Qt5WebKitWidgets)
+BuildRequires: cmake(Qt5WebEngineWidgets)
 BuildRequires: cmake(Grantlee5)
 BuildRequires: boost-devel
 BuildRequires: pkgconfig(poppler-qt5)
