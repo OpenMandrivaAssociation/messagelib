@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   messagelib-17.12.1.tar.xz: a0937693d54d398caec0edd8ac6d8c650b369aa6
+sources:
+  messagelib-17.12.2.tar.xz: f74e1908a758c44ea818ffca9e0c7ea393fc1bf4
