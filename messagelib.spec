@@ -4,7 +4,7 @@
 
 Name: messagelib
 Epoch: 3
-Version:	17.04.0
+Version:	 17.12.2
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -36,7 +36,8 @@ BuildRequires: cmake(KF5CalendarCore)
 BuildRequires: cmake(KF5MailTransport)
 BuildRequires: cmake(KF5IdentityManagement)
 BuildRequires: cmake(Qt5WebEngine)
-BuildRequires: cmake(Qt5WebKitWidgets)
+BuildRequires: cmake(Qt5WebEngineWidgets)
+BuildRequires: cmake(Grantlee5)
 BuildRequires: boost-devel
 BuildRequires: pkgconfig(poppler-qt5)
 Conflicts: messageviewer < 2:16.08.3-3
@@ -98,6 +99,7 @@ cat *.lang >%{name}.lang
 
 %files -f %{name}.lang
 %{_libdir}/qt5/plugins/messageviewer/*.so
+%{_libdir}/qt5/plugins/messageviewer/grantlee/*/messageviewer_grantlee_extension.so
 %{_datadir}/libmessageviewer
 %{_datadir}/messagelist
 %{_datadir}/messageviewer
@@ -108,6 +110,7 @@ cat *.lang >%{name}.lang
 %{_datadir}/config.kcfg/customtemplates_kfg.kcfg
 %{_datadir}/config.kcfg/templatesconfiguration_kfg.kcfg
 %{_datadir}/knotifications5/messageviewer.notifyrc
+%{_datadir}/org.kde.syntax-highlighting/syntax/kmail-template.xml
 
 %files -n %{devname}
 %{_includedir}/*
