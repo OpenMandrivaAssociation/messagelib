@@ -4,7 +4,7 @@
 
 Name: messagelib
 Epoch: 3
-Version:	19.04.3
+Version:	19.07.80
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -146,9 +146,9 @@ cat *.lang >%{name}.lang
 %{_datadir}/messagelist
 %{_datadir}/messageviewer
 %{_datadir}/kconf_update/messageviewer.upd
-%{_sysconfdir}/xdg/messagelib.categories
-%{_sysconfdir}/xdg/messagelib.renamecategories
-%{_sysconfdir}/xdg/messageviewer_header_themes.knsrc
+%{_datadir}/qlogging-categories5/messagelib.categories
+%{_datadir}/qlogging-categories5/messagelib.renamecategories
+%{_datadir}/knsrcfiles/messageviewer_header_themes.knsrc
 %{_datadir}/config.kcfg/customtemplates_kfg.kcfg
 %{_datadir}/config.kcfg/templatesconfiguration_kfg.kcfg
 %{_datadir}/knotifications5/messageviewer.notifyrc
