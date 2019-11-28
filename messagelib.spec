@@ -33,6 +33,7 @@ BuildRequires: cmake(Qt5WebEngineWidgets)
 BuildRequires: cmake(Qt5Widgets)
 BuildRequires: cmake(Gpgmepp)
 BuildRequires: cmake(QGpgme)
+BuildRequires: cmake(Qca-qt5)
 BuildRequires: sasl-devel
 BuildRequires: cmake(KF5Akonadi)
 BuildRequires: cmake(KF5AkonadiContact)
