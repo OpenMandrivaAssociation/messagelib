@@ -4,7 +4,7 @@
 
 Name: messagelib
 Epoch: 3
-Version:	19.12.3
+Version:	20.03.80
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -134,7 +134,6 @@ Development files (Headers etc.) for %{name}.
 %find_lang libmessagecomposer
 %find_lang libmessagecore
 %find_lang libmessagelist
-%find_lang libmessageviewer
 %find_lang libmimetreeparser
 %find_lang libtemplateparser
 %find_lang libwebengineviewer
@@ -142,7 +141,7 @@ cat *.lang >%{name}.lang
 
 
 %files -f %{name}.lang
-%{_libdir}/qt5/plugins/messageviewer/*.so
+%{_libdir}/qt5/plugins/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
 %{_libdir}/qt5/plugins/messageviewer/grantlee/*/messageviewer_grantlee_extension.so
 %{_datadir}/libmessageviewer
 %{_datadir}/messagelist
