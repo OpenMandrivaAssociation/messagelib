@@ -13,6 +13,7 @@ Version:	20.03.90
 %endif
 Release:	2
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
+Patch0: messagelib-20.03.90-qt-5.15.patch
 Summary: KDE library for message handling
 URL: http://kde.org/
 License: GPL
@@ -115,8 +116,7 @@ Requires: %{mklibname KF5WebEngineViewer %{major}} = %{EVRD}
 Development files (Headers etc.) for %{name}.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 %cmake_kde5
 
 %build

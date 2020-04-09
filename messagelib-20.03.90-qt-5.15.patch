@@ -1,0 +1,87 @@
+diff -up messagelib-20.03.90/messagecomposer/src/followupreminder/followupreminderselectdatedialog.cpp.omv~ messagelib-20.03.90/messagecomposer/src/followupreminder/followupreminderselectdatedialog.cpp
+--- messagelib-20.03.90/messagecomposer/src/followupreminder/followupreminderselectdatedialog.cpp.omv~	2020-04-10 01:17:39.127936719 +0200
++++ messagelib-20.03.90/messagecomposer/src/followupreminder/followupreminderselectdatedialog.cpp	2020-04-10 01:17:46.559036051 +0200
+@@ -89,7 +89,7 @@ FollowUpReminderSelectDateDialog::Follow
+     formLayout->addRow(i18n("Store ToDo in:"), d->mCollectionCombobox);
+ 
+     connect(d->mDateComboBox->lineEdit(), &QLineEdit::textChanged, this, &FollowUpReminderSelectDateDialog::slotDateChanged);
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
++#if QT_VERSION <= QT_VERSION_CHECK(5, 15, 0)
+     connect(d->mCollectionCombobox, qOverload<int>(&Akonadi::CollectionComboBox::currentIndexChanged), this, &FollowUpReminderSelectDateDialog::updateOkButton);
+ #else
+     connect(d->mCollectionCombobox, qOverload<int, const QString &>(&Akonadi::CollectionComboBox::currentIndexChanged), this, &FollowUpReminderSelectDateDialog::updateOkButton);
+diff -up messagelib-20.03.90/messagecomposer/src/imagescaling/imagescalingwidget.cpp.omv~ messagelib-20.03.90/messagecomposer/src/imagescaling/imagescalingwidget.cpp
+--- messagelib-20.03.90/messagecomposer/src/imagescaling/imagescalingwidget.cpp.omv~	2020-04-10 01:16:59.852409883 +0200
++++ messagelib-20.03.90/messagecomposer/src/imagescaling/imagescalingwidget.cpp	2020-04-10 01:17:12.023573485 +0200
+@@ -73,22 +73,22 @@ ImageScalingWidget::ImageScalingWidget(Q
+     connect(d->ui->skipImageSizeLower, &QCheckBox::clicked, this, &ImageScalingWidget::changed);
+     connect(d->ui->imageSize, qOverload<int>(&QSpinBox::valueChanged), this, &ImageScalingWidget::changed);
+     connect(d->ui->pattern, &KLineEdit::textChanged, this, &ImageScalingWidget::changed);
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
++#if QT_VERSION <= QT_VERSION_CHECK(5, 15, 0)
+     connect(d->ui->CBMaximumWidth, qOverload<int>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+ #else
+     connect(d->ui->CBMaximumWidth, qOverload<int, const QString &>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+ #endif
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
++#if QT_VERSION <= QT_VERSION_CHECK(5, 15, 0)
+     connect(d->ui->CBMaximumHeight, qOverload<int>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+ #else
+     connect(d->ui->CBMaximumHeight, qOverload<int, const QString &>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+ #endif
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
++#if QT_VERSION <= QT_VERSION_CHECK(5, 15, 0)
+     connect(d->ui->CBMinimumWidth, qOverload<int>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+ #else
+     connect(d->ui->CBMinimumWidth, qOverload<int, const QString &>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+ #endif
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
++#if QT_VERSION <= QT_VERSION_CHECK(5, 15, 0)
+     connect(d->ui->CBMinimumHeight, qOverload<int>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+ #else
+     connect(d->ui->CBMinimumHeight, qOverload<int, const QString &>(&QComboBox::currentIndexChanged), this, &ImageScalingWidget::slotComboboxChanged);
+diff -up messagelib-20.03.90/messagelist/src/core/widgetbase.cpp.omv~ messagelib-20.03.90/messagelist/src/core/widgetbase.cpp
+--- messagelib-20.03.90/messagelist/src/core/widgetbase.cpp.omv~	2020-04-10 01:14:32.635403629 +0200
++++ messagelib-20.03.90/messagelist/src/core/widgetbase.cpp	2020-04-10 01:14:42.219535946 +0200
+@@ -208,7 +208,7 @@ void Widget::populateStatusFilterCombo()
+     d->mStatusFilterComboPopulationInProgress = true;
+     QComboBox *tagFilterComboBox = d->quickSearchLine->tagFilterComboBox();
+     d->mCurrentStatusFilterIndex = (tagFilterComboBox->currentIndex() != -1) ? tagFilterComboBox->currentIndex() : 0;
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
++#if QT_VERSION <= QT_VERSION_CHECK(5, 15, 0)
+     disconnect(tagFilterComboBox, qOverload<int>(&QComboBox::currentIndexChanged), this, &Widget::statusSelected);
+ #else
+     disconnect(tagFilterComboBox, qOverload<int, const QString &>(&QComboBox::currentIndexChanged), this, &Widget::statusSelected);
+@@ -227,7 +227,7 @@ void Widget::addMessageTagItem(const QPi
+ void Widget::setCurrentStatusFilterItem()
+ {
+     d->quickSearchLine->updateComboboxVisibility();
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
++#if QT_VERSION <= QT_VERSION_CHECK(5, 15, 0)
+     connect(d->quickSearchLine->tagFilterComboBox(), qOverload<int>(&QComboBox::currentIndexChanged), this, &Widget::statusSelected);
+ #else
+     connect(d->quickSearchLine->tagFilterComboBox(), qOverload<int, const QString &>(&QComboBox::currentIndexChanged), this, &Widget::statusSelected);
+diff -up messagelib-20.03.90/messageviewer/src/widgets/configurewidget.cpp.omv~ messagelib-20.03.90/messageviewer/src/widgets/configurewidget.cpp
+--- messagelib-20.03.90/messageviewer/src/widgets/configurewidget.cpp.omv~	2020-04-10 01:14:15.829170980 +0200
++++ messagelib-20.03.90/messageviewer/src/widgets/configurewidget.cpp	2020-04-10 01:14:21.031243081 +0200
+@@ -65,7 +65,7 @@ ConfigureWidget::ConfigureWidget(QWidget
+         MessageViewer::MessageViewerSettings::self()->shrinkQuotesItem()->whatsThis());
+     d->mSettingsUi->kcfg_ShowExpandQuotesMark->setWhatsThis(
+         MessageViewer::MessageViewerSettings::self()->showExpandQuotesMarkItem()->whatsThis());
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
++#if QT_VERSION <= QT_VERSION_CHECK(5, 15, 0)
+     connect(d->mSettingsUi->overrideCharacterEncoding, qOverload<int>(&QComboBox::currentIndexChanged), this,
+             &ConfigureWidget::settingsChanged);
+ #else
+diff -up messagelib-20.03.90/webengineviewer/src/tests/testwebenginescript.cpp.omv~ messagelib-20.03.90/webengineviewer/src/tests/testwebenginescript.cpp
+--- messagelib-20.03.90/webengineviewer/src/tests/testwebenginescript.cpp.omv~	2020-04-10 01:14:57.034739971 +0200
++++ messagelib-20.03.90/webengineviewer/src/tests/testwebenginescript.cpp	2020-04-10 01:15:02.840819762 +0200
+@@ -129,7 +129,7 @@ TestScriptWidget::TestScriptWidget(QWidg
+     mScriptCombo = new QComboBox;
+     vScriptLayout->addWidget(mScriptCombo);
+     fillScriptCombo(mScriptCombo);
+-#if QT_VERSION < QT_VERSION_CHECK(5, 15, 0)
++#if QT_VERSION <= QT_VERSION_CHECK(5, 15, 0)
+     connect(mScriptCombo, qOverload<int>(&QComboBox::currentIndexChanged), this, &TestScriptWidget::slotCurrentIndexChanged);
+ #else
+     connect(mScriptCombo, qOverload<int, const QString &>(&QComboBox::currentIndexChanged), this, &TestScriptWidget::slotCurrentIndexChanged);
