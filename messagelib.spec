@@ -4,7 +4,7 @@
 
 Name: messagelib
 Epoch: 3
-Version:	20.04.3
+Version:	20.07.80
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -47,14 +47,12 @@ BuildRequires: cmake(KF5Completion)
 BuildRequires: cmake(KF5Config)
 BuildRequires: cmake(KF5ConfigWidgets)
 BuildRequires: cmake(KF5Contacts)
-BuildRequires: cmake(KF5FollowupReminder)
 BuildRequires: cmake(KF5I18n)
 BuildRequires: cmake(KF5IconThemes)
 BuildRequires: cmake(KF5ItemViews)
 BuildRequires: cmake(KF5JobWidgets)
 BuildRequires: cmake(KF5KIO)
 BuildRequires: cmake(KF5Mime)
-BuildRequires: cmake(KF5SendLater)
 BuildRequires: cmake(KF5Service)
 BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5Sonnet)
@@ -63,7 +61,6 @@ BuildRequires: cmake(KF5Gravatar)
 BuildRequires: cmake(KF5MailTransport)
 BuildRequires: cmake(KF5IdentityManagement)
 BuildRequires: cmake(KF5DBusAddons)
-BuildRequires: cmake(KF5LibkdepimAkonadi)
 BuildRequires: cmake(KF5TextWidgets)
 BuildRequires: cmake(KF5WidgetsAddons)
 BuildRequires: cmake(KF5WindowSystem)
@@ -81,7 +78,7 @@ BuildRequires: cmake(KF5MailTransportAkonadi)
 BuildRequires: cmake(KF5Mbox)
 BuildRequires: cmake(KF5PimCommonAkonadi)
 BuildRequires: cmake(KF5PimTextEdit)
-BuildRequires: cmake(KF5SendLater)
+BuildRequires: cmake(KF5Libkdepim)
 BuildRequires: boost-devel
 BuildRequires: pkgconfig(poppler-qt5)
 Conflicts: messageviewer < 2:16.08.3-3
