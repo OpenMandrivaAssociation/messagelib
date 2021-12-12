@@ -4,7 +4,7 @@
 
 Name: messagelib
 Epoch: 3
-Version:	21.08.3
+Version:	21.12.0
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -142,7 +142,6 @@ cat *.lang >%{name}.lang
 %{_datadir}/libmessageviewer
 %{_datadir}/messagelist
 %{_datadir}/messageviewer
-%{_datadir}/kconf_update/messageviewer.upd
 %{_datadir}/qlogging-categories5/messagelib.categories
 %{_datadir}/qlogging-categories5/messagelib.renamecategories
 %{_datadir}/knsrcfiles/messageviewer_header_themes.knsrc
@@ -156,3 +155,4 @@ cat *.lang >%{name}.lang
 %{_libdir}/*.so
 %{_libdir}/cmake/*
 %{_libdir}/qt5/mkspecs/modules/*.pri
+%doc %{_docdir}/qt5/*.{tags,qch}
