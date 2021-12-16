@@ -81,6 +81,9 @@ BuildRequires: cmake(KF5PimTextEdit)
 BuildRequires: cmake(KF5Libkdepim)
 BuildRequires: boost-devel
 BuildRequires: pkgconfig(poppler-qt5)
+# For QCH format docs
+BuildRequires: doxygen
+BuildRequires: qt5-assistant
 Conflicts: messageviewer < 2:16.08.3-3
 Conflicts: kmail < 3:17.04.0
 Conflicts: kdepim-addons < 3:17.04.0
