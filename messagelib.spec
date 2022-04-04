@@ -79,6 +79,8 @@ BuildRequires: cmake(KF5Mbox)
 BuildRequires: cmake(KF5PimCommonAkonadi)
 BuildRequires: cmake(KF5PimTextEdit)
 BuildRequires: cmake(KF5Libkdepim)
+BuildRequires: cmake(KF5Notifications)
+BuildRequires: cmake(KF5Libkdepim)
 BuildRequires: boost-devel
 BuildRequires: pkgconfig(poppler-qt5)
 # For QCH format docs
