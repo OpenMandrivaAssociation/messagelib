@@ -4,7 +4,7 @@
 
 Name: messagelib
 Epoch: 3
-Version:	22.04.3
+Version:	22.07.90
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -142,8 +142,8 @@ cat *.lang >%{name}.lang
 
 
 %files -f %{name}.lang
-%{_libdir}/qt5/plugins/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
-%{_libdir}/qt5/plugins/messageviewer/grantlee/*/messageviewer_grantlee_extension.so
+%{_libdir}/qt5/plugins/pim5/messageviewer/grantlee/*/messageviewer_grantlee_extension.so
+%{_libdir}/qt5/plugins/pim5/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
 %{_datadir}/libmessageviewer
 %{_datadir}/messagelist
 %{_datadir}/messageviewer
