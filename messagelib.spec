@@ -1,5 +1,4 @@
 %define major 5
-%define libname %mklibname KF5MessageLib %{major}
 %define devname %mklibname KF5MessageLib -d
 
 Name: messagelib
@@ -105,13 +104,13 @@ KDE library for message handling.
 %package -n %{devname}
 Summary: Development files for %{name}
 Group: Development/C
-Requires: %{mklibname KF5MessageComposer %{major}} = %{EVRD}
-Requires: %{mklibname KF5MessageCore %{major}} = %{EVRD}
-Requires: %{mklibname KF5MessageList %{major}} = %{EVRD}
-Requires: %{mklibname KF5MessageViewer %{major}} = %{EVRD}
-Requires: %{mklibname KF5TemplateParser %{major}} = %{EVRD}
-Requires: %{mklibname KF5MimeTreeParser %{major}} = %{EVRD}
-Requires: %{mklibname KF5WebEngineViewer %{major}} = %{EVRD}
+Requires: %{mklibname KF5MessageComposer} = %{EVRD}
+Requires: %{mklibname KF5MessageCore} = %{EVRD}
+Requires: %{mklibname KF5MessageList} = %{EVRD}
+Requires: %{mklibname KF5MessageViewer} = %{EVRD}
+Requires: %{mklibname KF5TemplateParser} = %{EVRD}
+Requires: %{mklibname KF5MimeTreeParser} = %{EVRD}
+Requires: %{mklibname KF5WebEngineViewer} = %{EVRD}
 
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
