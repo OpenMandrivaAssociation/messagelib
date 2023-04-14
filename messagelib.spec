@@ -1,16 +1,17 @@
 %define major 5
-%define devname %mklibname KF5MessageLib -d
+%define olddevname %mklibname KF5MessageLib -d
+%define devname %mklibname KPim5MessageLib -d
 
 Name: messagelib
 Epoch: 3
-Version:	22.12.3
+Version:	23.03.90
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
 %endif
-Release:	2
+Release:	1
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
 Summary: KDE library for message handling
 URL: http://kde.org/
@@ -88,29 +89,37 @@ BuildRequires: qt5-assistant
 Conflicts: messageviewer < 2:16.08.3-3
 Conflicts: kmail < 3:17.04.0
 Conflicts: kdepim-addons < 3:17.04.0
+Obsoletes: %{mklibname KF5MessageComposer} < %{EVRD}
+Obsoletes: %{mklibname KF5MessageCore} < %{EVRD}
+Obsoletes: %{mklibname KF5MessageList} < %{EVRD}
+Obsoletes: %{mklibname KF5MessageViewer} < %{EVRD}
+Obsoletes: %{mklibname KF5TemplateParser} < %{EVRD}
+Obsoletes: %{mklibname KF5MimeTreeParser} < %{EVRD}
+Obsoletes: %{mklibname KF5WebEngineViewer} < %{EVRD}
 
 %description
 KDE library for message handling.
 
 %define major 5
-%dependinglibpackage KF5MessageComposer %{major}
-%dependinglibpackage KF5MessageCore %{major}
-%dependinglibpackage KF5MessageList %{major}
-%dependinglibpackage KF5MessageViewer %{major}
-%dependinglibpackage KF5TemplateParser %{major}
-%dependinglibpackage KF5MimeTreeParser %{major}
-%dependinglibpackage KF5WebEngineViewer %{major}
+%dependinglibpackage KPim5MessageComposer %{major}
+%dependinglibpackage KPim5MessageCore %{major}
+%dependinglibpackage KPim5MessageList %{major}
+%dependinglibpackage KPim5MessageViewer %{major}
+%dependinglibpackage KPim5TemplateParser %{major}
+%dependinglibpackage KPim5MimeTreeParser %{major}
+%dependinglibpackage KPim5WebEngineViewer %{major}
 
 %package -n %{devname}
 Summary: Development files for %{name}
 Group: Development/C
-Requires: %{mklibname KF5MessageComposer} = %{EVRD}
-Requires: %{mklibname KF5MessageCore} = %{EVRD}
-Requires: %{mklibname KF5MessageList} = %{EVRD}
-Requires: %{mklibname KF5MessageViewer} = %{EVRD}
-Requires: %{mklibname KF5TemplateParser} = %{EVRD}
-Requires: %{mklibname KF5MimeTreeParser} = %{EVRD}
-Requires: %{mklibname KF5WebEngineViewer} = %{EVRD}
+Requires: %{mklibname KPim5MessageComposer} = %{EVRD}
+Requires: %{mklibname KPim5MessageCore} = %{EVRD}
+Requires: %{mklibname KPim5MessageList} = %{EVRD}
+Requires: %{mklibname KPim5MessageViewer} = %{EVRD}
+Requires: %{mklibname KPim5TemplateParser} = %{EVRD}
+Requires: %{mklibname KPim5MimeTreeParser} = %{EVRD}
+Requires: %{mklibname KPim5WebEngineViewer} = %{EVRD}
+%rename %{olddevname}
 
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
