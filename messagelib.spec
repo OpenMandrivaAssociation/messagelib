@@ -13,6 +13,9 @@ Version:	23.04.1
 %endif
 Release:	1
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/%{name}-%{version}.tar.xz
+# Drop support for old versions of KTextAddons to make
+# rpm's cmake dependency generator happy
+Patch0: messagelib-23.04.1-drop-ktextaddons-1.2.patch
 Summary: KDE library for message handling
 URL: http://kde.org/
 License: GPL
