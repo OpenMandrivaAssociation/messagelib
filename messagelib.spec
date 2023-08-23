@@ -4,7 +4,7 @@
 
 Name: messagelib
 Epoch: 3
-Version:	23.04.3
+Version:	23.08.0
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -59,10 +59,9 @@ BuildRequires: cmake(KF5Mime)
 BuildRequires: cmake(KF5Service)
 BuildRequires: cmake(KF5Solid)
 BuildRequires: cmake(KF5Sonnet)
-BuildRequires: cmake(KF5Mbox)
-BuildRequires: cmake(KF5Gravatar)
-BuildRequires: cmake(KF5MailTransport)
-BuildRequires: cmake(KF5IdentityManagement)
+BuildRequires: cmake(KPim5Gravatar)
+BuildRequires: cmake(KPim5MailTransport)
+BuildRequires: cmake(KPim5IdentityManagement)
 BuildRequires: cmake(KF5DBusAddons)
 BuildRequires: cmake(KF5TextWidgets)
 BuildRequires: cmake(KF5WidgetsAddons)
@@ -72,16 +71,13 @@ BuildRequires: cmake(KF5SyntaxHighlighting)
 BuildRequires: cmake(KF5NewStuff)
 BuildRequires: cmake(Grantlee5)
 BuildRequires: cmake(KPim5GrantleeTheme)
-BuildRequires: cmake(KPim5Gravatar)
-BuildRequires: cmake(KPim5IdentityManagement)
 BuildRequires: cmake(KPim5Ldap)
 BuildRequires: cmake(KPim5Libkleo)
-BuildRequires: cmake(KPim5MailTransportAkonadi)
 BuildRequires: cmake(KPim5Mbox)
 BuildRequires: cmake(KPim5TextEdit)
 BuildRequires: cmake(KPim5Libkdepim)
 BuildRequires: cmake(KF5Notifications)
-BuildRequires: cmake(KF5PimCommonAkonadi)
+BuildRequires: cmake(KPim5PimCommonAkonadi)
 BuildRequires: boost-devel
 BuildRequires: pkgconfig(poppler-qt5)
 # For QCH format docs

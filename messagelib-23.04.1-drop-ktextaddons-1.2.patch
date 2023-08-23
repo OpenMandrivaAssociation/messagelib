@@ -1,10 +1,10 @@
-diff -up messagelib-23.04.1/messagecomposer/KPimMessageComposerConfig.cmake.in.omv~ messagelib-23.04.1/messagecomposer/KPimMessageComposerConfig.cmake.in
---- messagelib-23.04.1/messagecomposer/KPimMessageComposerConfig.cmake.in.omv~	2023-05-14 03:37:53.325960760 +0200
-+++ messagelib-23.04.1/messagecomposer/KPimMessageComposerConfig.cmake.in	2023-05-14 03:37:59.169008017 +0200
-@@ -10,10 +10,6 @@ find_dependency(KPim@KF_MAJOR_VERSION@Id
+diff -up messagelib-23.08.0/messagecomposer/KPimMessageComposerConfig.cmake.in.1~ messagelib-23.08.0/messagecomposer/KPimMessageComposerConfig.cmake.in
+--- messagelib-23.08.0/messagecomposer/KPimMessageComposerConfig.cmake.in.1~	2023-08-23 15:00:31.479644164 +0200
++++ messagelib-23.08.0/messagecomposer/KPimMessageComposerConfig.cmake.in	2023-08-23 15:01:13.496076473 +0200
+@@ -9,10 +9,6 @@ find_dependency(KPim@KF_MAJOR_VERSION@Ak
+ find_dependency(KPim@KF_MAJOR_VERSION@IdentityManagement "@IDENTITYMANAGEMENT_LIB_VERSION@")
  find_dependency(KPim@KF_MAJOR_VERSION@AkonadiMime "@AKONADIMIME_LIB_VERSION@")
  find_dependency(KPim@KF_MAJOR_VERSION@Libkleo "@LIBKLEO_LIB_VERSION@")
- find_dependency(KPim@KF_MAJOR_VERSION@MessageViewer "@MESSAGELIB_LIB_VERSION@")
 -if (@HAVE_TEXT_AUTOCORRECTION_WIDGETS@)
 -	find_dependency(KF@KF_MAJOR_VERSION@TextAutoCorrectionWidgets "@KTEXTADDONS_MIN_VERSION@")
 -else ()
