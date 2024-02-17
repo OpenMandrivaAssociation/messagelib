@@ -1,17 +1,24 @@
+%define git 20240217
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define major 6
 %define olddevname %mklibname KF6MessageLib -d
 %define devname %mklibname KPim6MessageLib -d
 
 Name: plasma6-messagelib
-Version:	24.01.95
+Version:	24.01.96
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
 %else
 %define ftpdir stable
 %endif
-Release:	1
+Release:	%{?git:0.%{git}.}1
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/pim/messagelib/-/archive/%{gitbranch}/messagelib-%{gitbranchd}.tar.bz2#/messagelib-20240217.tar.bz2
+%else
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/messagelib-%{version}.tar.xz
+%endif
 Summary: KDE library for message handling
 URL: http://kde.org/
 License: GPL
@@ -98,25 +105,18 @@ KDE library for message handling.
 
 %define major 6
 %dependinglibpackage KPim6MessageComposer %{major}
-%{_libdir}/libKPim6MessageComposer.so.5*
 
 %dependinglibpackage KPim6MessageCore %{major}
-%{_libdir}/libKPim6MessageCore.so.5*
 
 %dependinglibpackage KPim6MessageList %{major}
-%{_libdir}/libKPim6MessageList.so.5*
 
 %dependinglibpackage KPim6MessageViewer %{major}
-%{_libdir}/libKPim6MessageViewer.so.5*
 
 %dependinglibpackage KPim6TemplateParser %{major}
-%{_libdir}/libKPim6TemplateParser.so.5*
 
 %dependinglibpackage KPim6MimeTreeParser %{major}
-%{_libdir}/libKPim6MimeTreeParser.so.5*
 
 %dependinglibpackage KPim6WebEngineViewer %{major}
-%{_libdir}/libKPim6WebEngineViewer.so.5*
 
 %package -n %{devname}
 Summary: Development files for %{name}
@@ -134,7 +134,7 @@ Requires: %{mklibname KPim6WebEngineViewer} = %{EVRD}
 Development files (Headers etc.) for %{name}.
 
 %prep
-%autosetup -p1 -n messagelib-%{version}
+%autosetup -p1 -n messagelib-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
 	-G Ninja
