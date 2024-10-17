@@ -20,7 +20,7 @@ Source0:	https://invent.kde.org/pim/messagelib/-/archive/%{gitbranch}/messagelib
 Source0: http://download.kde.org/%{ftpdir}/release-service/%{version}/src/messagelib-%{version}.tar.xz
 %endif
 Summary: KDE library for message handling
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake(ECM)
