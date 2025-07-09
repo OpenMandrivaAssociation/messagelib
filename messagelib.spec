@@ -5,7 +5,7 @@
 %define olddevname %mklibname KF6MessageLib -d
 %define devname %mklibname KPim6MessageLib -d
 
-Name: plasma6-messagelib
+Name: messagelib
 Version:	25.04.0
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
