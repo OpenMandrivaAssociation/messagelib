@@ -6,7 +6,7 @@
 %define devname %mklibname KPim6MessageLib -d
 
 Name: messagelib
-Version:	25.04.0
+Version:	25.04.3
 %define is_beta %(if test `echo %{version} |cut -d. -f3` -ge 70; then echo -n 1; else echo -n 0; fi)
 %if %{is_beta}
 %define ftpdir unstable
@@ -99,6 +99,9 @@ Obsoletes: %{mklibname KF6MessageViewer} < %{EVRD}
 Obsoletes: %{mklibname KF6TemplateParser} < %{EVRD}
 Obsoletes: %{mklibname KF6MimeTreeParser} < %{EVRD}
 Obsoletes: %{mklibname KF6WebEngineViewer} < %{EVRD}
+%rename plasma6-messagelib
+BuildSystem: cmake
+BuildOption: -DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
 
 %description
 KDE library for message handling.
@@ -132,33 +135,6 @@ Requires: %{mklibname KPim6WebEngineViewer} = %{EVRD}
 
 %description -n %{devname}
 Development files (Headers etc.) for %{name}.
-
-%prep
-%autosetup -p1 -n messagelib-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-%find_lang libmessagecomposer6
-%find_lang libmessagecore6
-%find_lang libmessagelist6
-%find_lang libmessageviewer6
-%find_lang libmimetreeparser6
-%find_lang libtemplateparser6
-%find_lang libwebengineviewer6
-%find_lang libmessagecomposer6
-%find_lang libmessagecore6
-%find_lang libmessagelist6
-%find_lang libmimetreeparser6
-%find_lang libtemplateparser6
-%find_lang libwebengineviewer6
-cat *.lang >%{name}.lang
-
 
 %files -f %{name}.lang
 %{_libdir}/qt6/plugins/pim6/messageviewer/headerstyle/messageviewer_defaultgrantleeheaderstyleplugin.so
