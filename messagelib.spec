@@ -13,7 +13,7 @@ Version:	25.04.3
 %else
 %define ftpdir stable
 %endif
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/pim/messagelib/-/archive/%{gitbranch}/messagelib-%{gitbranchd}.tar.bz2#/messagelib-%{git}.tar.bz2
 %else
@@ -89,9 +89,6 @@ BuildRequires: pkgconfig(poppler-qt6)
 # For QCH format docs
 BuildRequires: doxygen
 BuildRequires: qt6-qttools-assistant
-Conflicts: messageviewer < 2:16.08.3-3
-Conflicts: kmail < 3:17.04.0
-Conflicts: kdepim-addons < 3:17.04.0
 Obsoletes: %{mklibname KF6MessageComposer} < %{EVRD}
 Obsoletes: %{mklibname KF6MessageCore} < %{EVRD}
 Obsoletes: %{mklibname KF6MessageList} < %{EVRD}
