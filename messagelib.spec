@@ -72,7 +72,6 @@ BuildRequires: %mklibname -d KF6IconWidgets
 BuildRequires: cmake(KPim6GrantleeTheme)
 BuildRequires: cmake(KPim6AkonadiContactCore)
 BuildRequires: cmake(KPim6AkonadiMime)
-BuildRequires: cmake(KPim6AkonadiNotes)
 BuildRequires: cmake(KPim6AkonadiSearch)
 BuildRequires: cmake(KPim6LdapCore)
 BuildRequires: cmake(KPim6Libkleo)
